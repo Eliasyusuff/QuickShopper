@@ -23,23 +23,23 @@ public class ProductService {
         productRepository.save(product);
     }
 
-    public ProductDto getProductDto(Product product) {
-        ProductDto productDto = new ProductDto(product);
-        productDto.setName(product.getName());
-        productDto.setPrice(product.getPrice());
-        productDto.setId(product.getId());
-        return productDto;
-    }
+//    public ProductDto getProductDto(Product product) {
+//        ProductDto productDto = new ProductDto(product);
+//        productDto.setName(product.getName());
+//        productDto.setPrice(product.getPrice());
+//        productDto.setId(product.getId());
+//        return productDto;
+//    }
 
-    public List<ProductDto> getAllProducts(){
-        List<Product> allProducts = productRepository.findAll();
-
-        List<ProductDto> productDtos = new ArrayList<>();
-        for (Product product: allProducts) {
-            productDtos.add(getProductDto(product));
-        }
-        return productDtos;
-    }
+//    public List<ProductDto> getAllProducts(){
+//        List<Product> allProducts = productRepository.findAll();
+//
+//        List<ProductDto> productDtos = new ArrayList<>();
+//        for (Product product: allProducts) {
+//            productDtos.add(getProductDto(product));
+//        }
+//        return productDtos;
+//    }
 
     public void updateProduct(ProductDto productDto, Long productId) throws Exception {
         Optional<Product> optionalProduct = productRepository.findById(productId);
